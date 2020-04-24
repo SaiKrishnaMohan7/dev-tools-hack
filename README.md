@@ -1,16 +1,14 @@
-# Mastering Chrome DevTools
+# Chrome DevTools
 
-A web app for teaching people about Chrome DevTools. This is the website is the course materials for the [Learning Chrome Dev Tools Course](https://frontendmasters.com/courses/chrome-dev-tools-v2/) on Frontend Masters.
+One of the most important tools in a dev's toolbox
 
-## How to use
+## Mounting Project to the internal FS
 
-```
-git clone https://github.com/jkup/mastering-chrome-devtools.git
-cd mastering-chrome-devtools
-npm install
-npm start
-```
+The dev tools has the option of letting you uplload the project you are working on to it's file system!
 
-## About
-
-This site is designed as teaching aid for my "Mastering Chrome DevTools" workshops but I hope it will stand fine on its own.
+- Here, it builds a mapping between your files and the files in the Chrome file system
+- You can figure out whihc annoying style is wining in `Computed Styles` section, this will show you which style is winning and where it coming from. Support `SASS, LESS and SCSS`.
+- Any chnages made to the RHS in the devtools, like styles, those changes end up persisting!
+  - Caveat: Anything on the left won't persist, like changing markup, you'd need to go to `Sources` and edit there, that persists
+  - Caveat: To the RHS, adding a brand new style won't persist
+  - *RULE: Only files that are mapped, to the RHS, are chnage persistent. LHS, go to sources and edit*
