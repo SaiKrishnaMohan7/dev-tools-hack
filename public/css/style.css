@@ -9,6 +9,8 @@ body {
   font-weight: 400;
   line-height: 30.5px;
   min-height: 100%;
+  background: #EEE;
+  box-shadow: 0 0 black;
 }
 
 a {
@@ -89,7 +91,7 @@ img {
 .blueBorder {
   border: 2px dotted blue;
   display: inline-block;
-  padding: 10px;
+  padding: 100px;
 }
 
 .editingLink:hover {
