@@ -3,19 +3,22 @@ const fetcher = document.getElementById("fetcher");
 fetcher.addEventListener("click", fetchImages);
 
 function fetchImages() {
-  fetch("/api").then(data => {
-    processImages(data.imageList);
+  fetch("/api")
+  .then(response => response.json()) // Got trumped by this; Convert Response Object to json; Response blob to json
+  .then(({ images }) => {
+    processImages(images);
   });
 }
 
 function processImages(images) {
   const list = document.createElement("ul");
-  images.forEach(element => {
+
+  images.forEach(image => {
     // Create elements
     const item = document.createElement("li");
     const title = document.createElement("h2");
     const author = document.createElement("span");
-    const image = new Image();
+    const img = new Image();
 
     // Style elements
     item.classList.add("debug-card");
@@ -23,14 +26,16 @@ function processImages(images) {
     author.classList.add("debug-author");
 
     // Populate elements
-    title.innerText = element.photographer;
-    author.innerText = ` by ${element.title}`;
-    image.src = element.source;
+    title.innerText = image.name;
+    author.innerText = ` by ${image.photographer}`;
+    img.src = image.source;
 
     // Append elements
     item.appendChild(title);
     item.appendChild(author);
-    item.appendChild(image);
+    item.appendChild(img);
     list.appendChild(item);
   });
+
+  return document.body.appendChild(list);
 }
