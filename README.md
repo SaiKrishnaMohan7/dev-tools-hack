@@ -45,3 +45,36 @@ Another special kinda breakpoint. Log to the console WITHOUT a console log! No m
 ## XHR Breakpoints
 
 Pause Execution when requesting a url and the url matches a string of your choice!
+
+## Network Tab Color Codes
+
+-- [SRC](https://slides.com/jkup/devtools/#/13/10)
+
+- WHITE
+  - HTTP1.1 allows for _6 TCP connections per origin_, whatever falls out of this is placed in a queue
+  - `css` and `js` are given higher priority by the browser for fetch
+  - This is why bundling is preferred. Bundling puts all the css and script files into one file so that the browser can GET them instead of waiting
+
+- GREY -dark
+  - Waiting/Stalled
+
+- GREY -light
+  - Proxy negotiation: req is done queueing =, has been sent out but hasn't hit the actual server; Proxy is slow
+
+- GREYish GREEN
+  - DNS Lookup: quick; can be cached
+
+- ORANGE
+  - Initial Connection/Connecting: Time it took to establish a connection, including TCP handshakes and negotiating a SSL
+
+- ORANGE -dark, brownish
+  - SSL negotiation
+
+- GREEN
+  - Time spent issuing a network req
+
+- GREEN
+  - Time spent waiting for the initial response, also known as the Time To First Byte. This time captures the latency of a round trip to the server in addition to the time spent waiting for the server to deliver the response
+
+- BLUE
+  - Content downloading
