@@ -78,3 +78,8 @@ Pause Execution when requesting a url and the url matches a string of your choic
 
 - BLUE
   - Content downloading
+
+## Perfromance
+
+- For CPU: as short as possible; for Memory:P as long as possible
+  - For memory, JS heap size increaces with time and hence the recording window should be long (jigsaw pattern)
